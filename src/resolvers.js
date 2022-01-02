@@ -31,6 +31,7 @@ export const resolvers = {
 
       return user
     },
+    updateUser: async (_, { _id, input }) => await User.findByIdAndUpdate(_id, input, { new: true }),
     deleteUser: async (_, { _id }) => await User.findByIdAndDelete(_id)
   }
 }
