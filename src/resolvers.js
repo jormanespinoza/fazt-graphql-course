@@ -10,7 +10,8 @@ export const resolvers = {
 
       return `Hello ${name}!`
     },
-    tasks: () => tasks
+    tasks: () => tasks,
+    users: async () => await User.find()
   },
   Mutation: {
     createTask: (_, { input }) => {
@@ -29,6 +30,7 @@ export const resolvers = {
       await user.save()
 
       return user
-    }
+    },
+    deleteUser: async (_, { _id }) => await User.findByIdAndDelete(_id)
   }
 }
