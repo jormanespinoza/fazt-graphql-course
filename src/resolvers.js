@@ -1,6 +1,6 @@
 import { tasks } from './sample'
 
-import User from './models/user'
+import User from './models/User'
 
 export const resolvers = {
   Query: {
@@ -20,7 +20,7 @@ export const resolvers = {
       }
 
       tasks.push(task)
-      
+
       return task
     },
     createUser: async (_, { input }) => {
